@@ -13,7 +13,7 @@
         background-color: #f5f5f5;
       }
       nav {
-        background: rgb(88, 88, 177);
+        background: #3f51b5;
         height: 80px;
         width: 100%;
         position: sticky;
@@ -125,18 +125,21 @@
         z-index: 0;
       }
       .hero button {
-        background-color: #00c6ff;
+        background-color: #f5c518;
         border: none;
-        color: white;
+        color: #333;
         padding: 12px 25px;
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-        margin-top: 10px;
+        margin-top: 20px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
       }
 
       #expBtn:hover {
-        background-color: #050607;
+        background-color: #e0b414;
+        color: white;
       }
       .hero-content {
         position: relative;
@@ -282,19 +285,20 @@
   }
   .menuCard img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
   }
 
   .menuCard h3 {
-    margin: 15px 0 5px;
-    font-size: 1.3rem;
-    color: #333;
+    margin: 15px 0 8px;
+    font-size: 1.5rem;
+    color: #3f51b5;
   }
   .menuCard p {
     margin-bottom: 15px;
-    color: #777;
-    font-size: 1rem;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: bold;
   }
   @media(max-width:768px){
     .menu{
@@ -309,31 +313,36 @@
 .footer{
   background-color: #222;;
   color: #fff;
-  padding: 40px 10%;
+  padding: 50px 10%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 .footerContent h3{
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 25px;
   color:  #f5c518;
+  font-weight: bold;
 
 }
 .footer p{
   font-size: 1rem;
-  margin: 8px 0;
+  margin: 10px 0;
 }
 .footer p i{
   color: #f5c518;
   margin-right:10px ;
 }
 .socialIcons a{
-  margin: 0 10px;
-  font-size: 1.5rem;
+  margin: 0 15px;
+  font-size: 1.8rem;
   color: #fff;
   transition: 0.3s;
 }
-.socialIcons a :hover{
+.socialIcons{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.socialIcons a:hover{
   color: #f5c518;
 }
 @media(max-width:600px){
@@ -347,7 +356,7 @@
     font-size: 0.9rem;
   }
   .socialIcons a{
-    font-size: 1.3rem;
-    margin: 0 8px;
+    font-size: 1.5rem;
+    margin: 0 10px;
   }
 }
