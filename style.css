@@ -105,7 +105,7 @@
       .hero {
         margin-top: 0px;
         height: 100vh;
-        background: url("/images/bazmhero.jpg")
+        background: url("images/bazmhero.jpg")
           no-repeat center center/cover;
         display: flex;
         justify-content: center;
