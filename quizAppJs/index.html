@@ -4,13 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+  integrity="sha512-wxyz...yourhash..." 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" 
+/> -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="startBtnDiv">
+      <button id="startNow" >Start Now!</button>
+    </div>
     <div>
-      <button id="startNow" onclick="handleStartNowBtn()">Start Now!</button>
+      
       <div style="display: none" id="quizmainContent">
         <p id="counterData"></p>
+
         <p id="questionEl"></p>
         <ul id="optionList"></ul>
         <button id="nextBtn">Next</button>

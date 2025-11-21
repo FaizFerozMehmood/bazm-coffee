@@ -76,40 +76,45 @@ const nextBtn = document.getElementById("nextBtn");
 const scoreArea = document.getElementById("scoreArea");
 const progress = document.getElementById("progress");
 const counterData = document.getElementById("counterData");
+const StartNowBtn = document.getElementById("startNow");
+StartNowBtn.addEventListener("click", handleStartNowBtn);
 function handleStartNowBtn() {
-  const StartNowBtn = document.getElementById("startNow");
   const quizmainContent = document.getElementById("quizmainContent");
   StartNowBtn.style.display = "none";
   quizmainContent.style.display = "block";
-  
+  showQuestion();
 }
-function restartQuiz(){
-const restartbtn = document.getElementById("Restart")
-restartbtn.style.display='block'
+function restartQuiz() {
+  const restartbtn = document.getElementById("Restart");
+  clearInterval(timerId);
+  currentIndex = 0;
+  score = 0;
+  scoreArea.innerText = "";
+  restartbtn.style.display = "none";
+  showQuestion();
 }
 let currentIndex = 0;
 let score = 0;
 let timerId = null;
 function startCounter(second) {
-   clearInterval(timerId)
+  clearInterval(timerId);
   let counter = second;
-timerId = setInterval(() => {
+  timerId = setInterval(() => {
     // console.log(counter);
-    counterData.textContent = counter;
+    counterData.innerHTML = `<i id="countclock">⏰</i><span id="counterNumber"> ${counter}</span> `;
     counter--;
     if (counter < 0) {
       clearInterval(timerId);
       console.log("stopped!");
-      disableoptions()
+      disableoptions();
     }
   }, 1000);
 }
 function disableoptions() {
   const btns = optionList.querySelectorAll("button");
-  btns.forEach(btn => btn.disabled = true);
+  btns.forEach((btn) => (btn.disabled = true));
   nextBtn.disabled = false;
 }
-
 
 const showQuestion = () => {
   // show ques
@@ -135,7 +140,7 @@ const showQuestion = () => {
   nextBtn.disabled = true;
   startCounter(5);
 };
-showQuestion();
+// showQuestion();
 
 const handleOnclick = (clcickedOpt) => {
   console.log("data clicked", clcickedOpt);
@@ -173,5 +178,7 @@ nextBtn.addEventListener("click", () => {
     showQuestion();
   } else {
     scoreArea.innerText = `You scored ${score} out of ${jsQuizQuestions.length}`;
+    const restartbtn = document.getElementById("Restart");
+    restartbtn.style.display = "block";
   }
 });
