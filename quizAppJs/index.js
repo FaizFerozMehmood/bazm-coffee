@@ -177,7 +177,11 @@ nextBtn.addEventListener("click", () => {
     currentIndex++;
     showQuestion();
   } else {
-    scoreArea.innerText = `You scored ${score} out of ${jsQuizQuestions.length}`;
+    scoreArea.innerText = ` ${
+      score > 8
+        ? `Congratulations! You scored ${score} `
+        : `oops! You Scored ${score}`
+    } out of ${jsQuizQuestions.length}`;
     const restartbtn = document.getElementById("Restart");
     restartbtn.style.display = "block";
   }
